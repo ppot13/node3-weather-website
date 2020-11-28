@@ -6,7 +6,7 @@ const indexController = require("../controllers/index");
 const aboutController = require("../controllers/about");
 const helpController = require("../controllers/help");
 const weatherController = require("../controllers/weather");
-const errorPageController = require("../controllers/404");
+const errorController = require("../controllers/error");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -29,9 +29,9 @@ app.get("/help", helpController.getHelp);
 
 app.get("/weather", weatherController.getWeather);
 
-app.get("/help/*", errorPageController.getNotAnArticle);
+app.get("/help/*", errorController.get404Article);
 
-app.get("*", errorPageController.getNotAPage);
+app.get("*", errorController.get404Page);
 
 app.listen(port, () => {
 	console.log("Server is up on port" + port);

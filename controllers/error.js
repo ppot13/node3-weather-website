@@ -1,4 +1,4 @@
-const getNotAnArticle = (req, res) => {
+const get404Article = (req, res) => {
 	res.render("404", {
 		title: "404",
 		name: "Edwin Cornejo",
@@ -6,7 +6,7 @@ const getNotAnArticle = (req, res) => {
 	});
 };
 
-const getNotAPage = (req, res) => {
+const get404Page = (req, res) => {
 	res.render("404", {
 		title: "404",
 		name: "Edwin Cornejo",
@@ -15,6 +15,6 @@ const getNotAPage = (req, res) => {
 };
 
 module.exports = {
-	getNotAnArticle,
-	getNotAPage,
+	get404Article,
+	get404Page,
 };
